@@ -1,0 +1,616 @@
+/**
+ * Site header
+ */
+.site-header {
+  border-top: 5px solid $border-color-03;
+  border-bottom: 1px solid $border-color-01;
+  min-height: $spacing-unit * 1.865;
+  line-height: $base-line-height * $base-font-size * 2.25;
+
+  // Positioning context for the mobile navigation icon
+  position: relative;
+}
+
+.site-title {
+  @include relative-font-size(1.625);
+  font-weight: 300;
+  letter-spacing: -1px;
+  margin-bottom: 0;
+  float: left;
+
+  @include media-query($on-palm) {
+    padding-right: 45px;
+  }
+
+  &,
+  &:visited {
+    color: $site-title-color;
+  }
+}
+
+.site-nav {
+  position: absolute;
+  top: 9px;
+  right: $spacing-unit * .5;
+  background-color: $background-color;
+  border: 1px solid $border-color-01;
+  border-radius: 5px;
+  text-align: right;
+
+  .nav-trigger {
+    display: none;
+  }
+
+  .menu-icon {
+    float: right;
+    width: 36px;
+    height: 26px;
+    line-height: 0;
+    padding-top: 10px;
+    text-align: center;
+
+    > svg path {
+      fill: $border-color-03;
+    }
+  }
+
+  label[for="nav-trigger"] {
+    display: block;
+    float: right;
+    width: 36px;
+    height: 36px;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  input ~ .trigger {
+    clear: both;
+    display: none;
+  }
+
+  input:checked ~ .trigger {
+    display: block;
+    padding-bottom: 5px;
+  }
+
+  .page-link {
+    color: $text-color;
+    line-height: $base-line-height;
+    display: block;
+    padding: 5px 10px;
+
+    // Gaps between nav items, but not on the last one
+    &:not(:last-child) {
+      margin-right: 0;
+    }
+    margin-left: 20px;
+  }
+
+  @media screen and (min-width: $on-medium) {
+    position: static;
+    float: right;
+    border: none;
+    background-color: inherit;
+
+    label[for="nav-trigger"] {
+      display: none;
+    }
+
+    .menu-icon {
+      display: none;
+    }
+
+    input ~ .trigger {
+      display: block;
+    }
+
+    .page-link {
+      display: inline;
+      padding: 0;
+
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+      margin-left: auto;
+    }
+  }
+}
+
+/**
+ * Site footer
+ */
+.site-footer {
+  border-top: 1px solid $border-color-01;
+  padding: $spacing-unit 0;
+}
+
+.footer-heading {
+  @include relative-font-size(1.125);
+  margin-bottom: $spacing-unit * .5;
+}
+
+.feed-subscribe .svg-icon {
+  padding: 5px 5px 2px 0
+}
+
+.contact-list,
+.social-media-list {
+  list-style: none;
+  margin-left: 0;
+}
+
+.footer-col-wrapper,
+.social-links {
+  @include relative-font-size(0.9375);
+  color: $brand-color;
+}
+
+.footer-col {
+  margin-bottom: $spacing-unit * .5;
+}
+
+.footer-col-1,
+.footer-col-2 {
+  width: calc(50% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-3 {
+  width: calc(100% - (#{$spacing-unit} / 2));
+}
+
+@media screen and (min-width: $on-large) {
+  .footer-col-1 {
+    width: calc(35% - (#{$spacing-unit} / 2));
+  }
+
+  .footer-col-2 {
+    width: calc(20% - (#{$spacing-unit} / 2));
+  }
+
+  .footer-col-3 {
+    width: calc(45% - (#{$spacing-unit} / 2));
+  }
+}
+
+@media screen and (min-width: $on-medium) {
+  .footer-col-wrapper {
+    display: flex
+  }
+
+  .footer-col {
+    width: calc(100% - (#{$spacing-unit} / 2));
+    padding: 0 ($spacing-unit * .5);
+
+    &:first-child {
+      padding-right: $spacing-unit * .5;
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+      padding-left: $spacing-unit * .5;
+    }
+  }
+}
+
+/**
+ * Page content
+ */
+.page-content {
+  padding: $spacing-unit 0;
+  flex: 1 0 auto;
+}
+
+.page-heading {
+  @include relative-font-size(2);
+}
+
+.post-list-heading {
+  @include relative-font-size(1.75);
+}
+
+.post-list {
+  margin-left: 0;
+  list-style: none;
+
+  > li {
+    margin-bottom: $spacing-unit;
+  }
+}
+
+.post-meta {
+  font-size: $small-font-size;
+  color: $brand-color;
+}
+
+.post-link {
+  display: block;
+  @include relative-font-size(1.5);
+}
+
+
+
+/**
+ * Posts
+ */
+.post-header {
+  margin-bottom: $spacing-unit;
+}
+
+.post-title,
+.post-content h1 {
+  @include relative-font-size(2.625);
+  letter-spacing: -1px;
+  line-height: 1.15;
+
+  @media screen and (min-width: $on-large) {
+    @include relative-font-size(2.625);
+  }
+}
+
+.post-content {
+  margin-bottom: $spacing-unit;
+
+  h1, h2, h3, h4, h5, h6 { margin-top: $spacing-unit }
+
+  h2 {
+    @include relative-font-size(1.75);
+
+    @media screen and (min-width: $on-large) {
+      @include relative-font-size(2);
+    }
+  }
+
+  h3 {
+    @include relative-font-size(1.375);
+
+    @media screen and (min-width: $on-large) {
+      @include relative-font-size(1.625);
+    }
+  }
+
+  h4 {
+    @include relative-font-size(1.25);
+  }
+
+  h5 {
+    @include relative-font-size(1.125);
+  }
+  h6 {
+    @include relative-font-size(1.0625);
+  }
+}
+
+
+.social-media-list {
+  display: table;
+  margin: 0 auto;
+  li {
+    float: left;
+    margin: 5px 10px 5px 0;
+    &:last-of-type { margin-right: 0 }
+    a {
+      display: block;
+      padding: 10px 12px;
+      border: 1px solid $border-color-01;
+      &:hover { border-color: $border-color-02 }
+    }
+  }
+}
+
+/**
+ * Pagination navbar
+ */
+.pagination {
+  margin-bottom: $spacing-unit;
+  @extend .social-media-list;
+  li {
+    a, div {
+      min-width: 41px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    div {
+      display: block;
+      padding: $spacing-unit * .25;
+      border: 1px solid transparent;
+
+      &.pager-edge {
+        color: $border-color-01;
+        border: 1px dashed;
+      }
+    }
+  }
+}
+
+
+
+/**
+ * Grid helpers
+ */
+@media screen and (min-width: $on-large) {
+  .one-half {
+    width: calc(50% - (#{$spacing-unit} / 2));
+  }
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.05);
+}
+
+.portfolio-item figcaption {
+  margin-top: 10px;
+}
+
+/* Add this to your custom CSS or Minima's CSS */
+
+.image-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.image-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%; /* Adjust the width as needed */
+  height: 80%; /* Adjust the height as needed */
+}
+
+.image-container img {
+  max-width: 250%;
+  max-height: 250%;
+  display: block;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+.image-on-left {
+  display: flex;
+  align-items: center;
+}
+
+.image-on-left img {
+  max-width: 50%;
+  margin-right: 20px; /* Adjust this value to control the space between the image and content */
+}
+
+.justify-text {
+  text-align: justify; /* Justify the text within the container */
+  overflow: hidden; /* Clear any potential overflow issues */
+}
+
+.z2c {
+  background-color: black; /* Sets the background color to black */
+  color: white; /* Adjusts text color for better readability on a dark background */
+  width: 100%; /* Stretches the element to the full width of the viewport */
+  min-height: 100vh; /* Stretches the element to the full height of the viewport */
+  margin: 0; /* Removes any default margin */
+  padding: 0; /* Removes any default padding */
+  /* Add any additional styles for this specific page here */
+}
+
+.main-heading {
+  color: #FFFFFF; /* White color for the main heading */
+  font-size: 2.5em; /* Large font size for emphasis */
+  border-bottom: 2px solid #D3D3D3; /* White-grey underline */
+  display: inline-block; /* Ensures the underline only spans the text */
+  margin-bottom: 20px; /* Space between the heading and the paragraph */
+}
+
+.description {
+  margin-bottom: 20px; /* Space between the paragraph and the program schedule */
+}
+
+.schedule-title {
+  font-size: 1.5em;
+  color: #D3D3D3;
+  margin-bottom: 10px; /* Space above the program schedule */
+}
+
+.schedule-list {
+  list-style-type: none; /* Removes default list styling */
+  padding: 0;
+}
+
+.schedule-list li {
+  margin-bottom: 10px; /* Space between list items */
+}
+
+.z2c-workshop h1, .z2c-workshop p, .z2c-workshop h2, .z2c-workshop ul {
+  color: #D3D3D3; /* Light grey text for all elements */
+}
+
+.z2c-workshop h1 {
+  font-size: 2.5em;
+  border-bottom: 2px solid #D3D3D3;
+  display: inline-block;
+}
+
+.z2c-workshop p {
+  margin-top: 20px;
+}
+
+.z2c-workshop h2 {
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+.z2c-workshop ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.z2c-workshop ul li {
+  margin-bottom: 10px; /* Space between list items */
+}
+
+.z2c-workshop h1 {
+  color: #D3D3D3;
+  font-size: 2.5em;
+  border-bottom: 2px solid #D3D3D3;
+  display: inline-block;
+  padding-bottom: 5px; /* Adjust as needed for space under the border */
+}
+
+.z2c-workshop p {
+  color: #D3D3D3;
+  margin-top: 20px;
+  font-size: 1em; /* Adjust font size as needed */
+  line-height: 1.6; /* For better readability */
+}
+
+.z2c-workshop h2 {
+  color: #D3D3D3;
+  font-size: 1.5em;
+  margin-top: 20px;
+  margin-bottom: 10px; /* Space after the h2 before the list starts */
+}
+
+.z2c-workshop ul {
+  color: #D3D3D3;
+  list-style-type: none;
+  padding: 0;
+}
+
+.z2c-workshop ul li {
+  margin-bottom: 10px; /* Space between list items */
+}
+
+
+.z2csite-header.small-title .dynamic-title h1.main-title {
+  font-size: 1em; /* Small size for the sticky header */
+  padding: 10px 0; /* Reduced padding when it's in the header */
+}
+
+.z2ccontent-section {
+  padding: 60px 0;
+}
+
+.z2csite-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh; /* Use 100% of the viewport height */
+  text-align: center;
+  flex-direction: column; /* Stack items vertically */
+  font-size: 34px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.z2cdynamic-title {
+  transition: all 0.3s ease-in-out;
+  will-change: transform;
+}
+
+.z2cmain-title {
+  font-size: 2.5em;
+  color: #D3D3D3;
+  margin-bottom: 0.5em; /* Space above the down arrow */
+}
+
+.z2cscroll-arrow-container {
+  position: absolute;
+  bottom: 20px; /* Position at the bottom of the header */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for exact centering */
+}
+
+.z2cscroll-down-arrow {
+  color: #D3D3D3;
+  font-size: 2em; /* Size of the arrow */
+  text-decoration: none; /* Remove underline from link */
+  animation: bounce 2s infinite; /* Bouncing animation */
+  display: block; /* Ensure it takes its own line */
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Adjust the .content-section styles if necessary */
+.z2ccontent-section {
+  padding: 40px 0;
+  font-size: 18px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Add media query if header becomes too small on smaller screens */
+@media (max-height: 600px) {
+  .z2csite-header {
+    height: 600px; /* Fixed height on small screens */
+  }
+  .scroll-arrow-container {
+    position: static; /* Stop absolute positioning on small screens */
+    transform: none;
+    padding-top: 20px; /* Provide spacing from title */
+  }
+}
+
+.z2ccontent-section ol li {
+  cursor: pointer; /* Change cursor on hover */
+  position: relative;
+  transition: transform 0.2s ease; /* Smooth transition for the transform property */
+}
+
+.z2ccontent-section ol li:hover {
+  transform: scale(1.05); /* Slightly enlarge text by 5% on hover */
+}
+
+.description {
+  display: none;
+  padding: 10px;
+  margin-top: 5px;
+  /* Style the description as needed */
+}
+
+.z2ccontent-section ol li:hover::after {
+  content: ' \2193'; /* Downward arrow */
+  font-size: 0.8em;
+  position: absolute;
+  right: -20px;
+  top: 0;
+}
+
+/* If you want the anchor tags specifically to enlarge on hover, keep this */
+.z2ccontent-section ol li a {
+  transition: transform 0.2s ease; /* Ensure smooth transition for link text as well */
+}
+
+.z2ccontent-section ol li a:hover {
+  transform: scale(1.1); /* Optional: Enlarge link text by 10% on hover */
+}

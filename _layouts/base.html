@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+
+  <body class=z2c>
+    {%- include headerz2c.html -%}
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </main>
+    
+    {%- include footerz2c.html -%}
+
+    <script>
+      const imageLinks = document.querySelectorAll('.image-link');
+      const imageOverlay = document.getElementById('image-overlay');
+      const largeImage = document.getElementById('large-image');
+      const closeButton = document.getElementById('close-button');
+    
+      imageLinks.forEach((link) => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const largeImagePath = link.getAttribute('href');
+          largeImage.setAttribute('src', largeImagePath);
+          imageOverlay.style.display = 'block';
+    
+          // Increase the size of the displayed image
+          largeImage.style.maxWidth = '100%'; // Adjust the size as needed
+          largeImage.style.maxHeight = '100%'; // Adjust the size as needed
+        });
+      });
+    
+      closeButton.addEventListener('click', () => {
+        imageOverlay.style.display = 'none';
+      });
+    
+      // Add an event listener to close the overlay when clicking outside
+      imageOverlay.addEventListener('click', (event) => {
+        if (event.target === imageOverlay) {
+          imageOverlay.style.display = 'none';
+        }
+      });
+    </script>
+  
+  </body>
+</html>

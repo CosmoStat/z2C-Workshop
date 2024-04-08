@@ -1,0 +1,106 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you:
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: 
+author:
+  # name: 
+  # email: 
+
+description: > # this means to ignore newlines until "baseurl:"
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-target-blank
+  - jekyll-gallery-generator
+  - jekyll-npm
+
+minima:
+  # Minima date format.
+  # Refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this.
+  #
+  # date_format: "%b %-d, %Y"
+
+  # Generate social links in footer.
+  #
+  social_links:
+  #   - { platform: devto,          user_url: "https://dev.to/jekyll" }
+  #   - { platform: dribbble,       user_url: "https://dribbble.com/jekyll" }
+  #   - { platform: facebook,       user_url: "https://www.facebook.com/jekyll" }
+  #   - { platform: flickr,         user_url: "https://www.flickr.com/photos/jekyll" }
+    - { platform: github,         user_url: "https://github.com/CosmoStat/z2C-Workshop" }
+  #   - { platform: google_scholar, user_url: "https://scholar.google.com/citations?user=qc6CJjYAAAAJ" }
+  #   - { platform: instagram,      user_url: "https://www.instagram.com/jekyll" }
+  #   - { platform: keybase,        user_url: "https://keybase.io/jekyll" }
+    # - { platform: linkedin,       user_url: "https://www.linkedin.com/in/vilasini-ts/" }
+  #   - { platform: microdotblog,   user_url: "https://micro.blog/jekyll" }
+  #   - { platform: pinterest,      user_url: "https://www.pinterest.com/jekyll" }
+  #   - { platform: stackoverflow,  user_url: "https://stackoverflow.com/users/1234567/jekyll" }
+  #   - { platform: telegram,       user_url: "https://t.me/jekyll" }
+  #   - { platform: twitter,        user_url: "https://twitter.com/jekyllrb" }
+  #   - { platform: youtube,        user_url: "https://www.youtube.com/jekyll" }
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+
+# header_pages:
+#   - about.markdown
+#   - portfolio.md
+# gallery:
+#   dir: /photos/               # Path to the gallery
+#   symlink: false            # false: copy images into _site. true: create symbolic links (saves disk space)
+#   title: "Photos"           # Title for gallery index page
+#   title_prefix: "Photos: "  # Title prefix for gallery pages. Gallery title = title_prefix + gallery_name
+#   sort_field: "date_time"   # How to sort galleries on the index page.
+#                             # Possible values are: title, date_time, best_image
+#   thumbnail_size:
+#     x: 400                  # max width of thumbnails (in pixels)
+#     y: 400                  # max height of thumbnails (in pixels)
+#   # The following options are for individual galleries.
+#   # galleries:
+#     greece:
+#       best_image: _DSC0398.jpg  # The image to show on the gallery index page. Defaults to the last image.
+
+# collections:
+#   photos:
+#     output: true
+
+# collections:
+#   talks:
+#     output: true
