@@ -1,6 +1,5 @@
 ---
 layout: home
-title: "z2C:Workshop"
 ---
 
 <header class="z2csite-header">
